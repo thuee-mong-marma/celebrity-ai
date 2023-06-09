@@ -1,0 +1,16 @@
+@import "celebrityAi";
+@import "loader";
+@import "fonts";
+@import "layout";
+@import "footer";
+@import "reset";
+
+html,
+body {
+    font-family: Avenir, Helvetica Neue, sans-serif !important;
+    color: #31556f;
+    // background-color: #f9f2ea;
+    background-color: #212127;
+    line-height: 1.37;
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,39 @@
+.footer {
+    padding: 20px 0;
+    height: 70px;
+    @media only screen and (max-width: 480px) {
+        padding-bottom: 20px;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .footer-item {
+            font-size: 12px;
+            line-height: 28px;
+            font-weight: 500;
+            color: #6f8797;
+        }
+
+        .footer-item:first-child {
+            margin-right: 10px;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 50%;
+                width: 1px;
+                background-color: #899ba7;
+                right: -10px;
+                top: 8px;
+            }
+        }
+
+        .footer-item:last-child {
+            margin-left: 10px;
+        }
+    }
+}
