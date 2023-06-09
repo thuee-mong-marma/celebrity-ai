@@ -16,8 +16,8 @@
             color: #6f8797;
         }
 
-        .footer-item:first-child {
-            margin-right: 10px;
+        .footer-item:not(:last-child) {
+            margin: 0 10px;
             position: relative;
 
             &::before {

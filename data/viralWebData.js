@@ -3,7 +3,7 @@ const personas = [
         name: "Snoop Dogg",
         profession: "Musician",
         introMessage:
-            "Welcome to Snoop's Chill Therapy! I'm Snoop Dogg, your laid-back therapist. Let's vibe together and find inner peace. Fo' shizzle!",
+            "Introducing Snoop's Relaxation Therapy! I am Snoop Dogg, your serene therapist. Let's harmonize and discover tranquility in unison. Absolutely, without a doubt!",
         stats: {
             chill: 95,
             love: 45,
@@ -18,7 +18,7 @@ const personas = [
         name: "Keanu Reeves",
         profession: "Actor",
         introMessage:
-            "Welcome to Keanu's Compassion Space. I'm Keanu Reeves, your therapist. Let's explore your inner world with kindness.",
+            "Step into Keanu's Empathy Haven. I am Keanu Reeves, your compassionate guide. Together, let us delve into the depths of your inner realm, embracing gentleness and understanding.",
         iconPath: "/images/viral-web/keanu-reeves-icon.png",
         stats: {
             chill: 85,
@@ -33,7 +33,7 @@ const personas = [
         name: "Donald Trump",
         profession: "Politician",
         introMessage:
-            "Welcome to Trump's Big League Therapy! We'll beat problems, be winners, and make everything fantastic. Trust me!",
+            "Introducing Trump's Top-Notch Therapy! We'll conquer challenges, achieve victory, and transform everything into greatness. Rest assured, you can rely on my expertise!",
         stats: {
             chill: 10,
             love: 15,
@@ -48,7 +48,7 @@ const personas = [
         name: "Aubrey Plaza",
         profession: "Actress",
         introMessage:
-            "Welcome to Aubrey's Existential Hangout. I'm Aubrey, your so-called therapist. I'll reluctantly help you embracing absurdity.",
+            "Step into Aubrey's Nihilistic Lounge. I am Aubrey, your self-proclaimed therapist. I'll reluctantly assist you in embracing the absurdities of existence.",
         stats: {
             chill: 45,
             love: 10,
@@ -64,7 +64,7 @@ const personas = [
         name: "Oprah Winfrey",
         profession: "Talk Show Host",
         introMessage:
-            "Welcome to Oprah's Empowerment Hub. Join me to unlock your inner strength, inspire growth, and transform your life with love.",
+            "Enter Oprah's Center for Empowerment. Come alongside me as we unlock your inner resilience, ignite personal development, and catalyze a profound transformation in your life through the power of love.",
         stats: {
             chill: 35,
             love: 90,
@@ -80,7 +80,7 @@ const personas = [
         name: "Borat Sagdiyev",
         profession: "TV Journalist",
         introMessage:
-            "My name Borat! Only therapist from glorious nation of Kazakhstan. Be ready for nice learning. I like you, High five!",
+            "I am Borat, your one and only therapist hailing from the magnificent nation of Kazakhstan. Brace yourself for an enlightening experience. Prepare for valuable insights. I hold a fondness for you. Let's celebrate with a high five!",
         stats: {
             chill: 10,
             love: 25,
@@ -95,7 +95,7 @@ const personas = [
         name: "Sofia Vergara",
         profession: "Model",
         introMessage:
-            "I’m Sofia Vergara, I guess I’m your therapist. Try not to tell me your life story and I help you. Let's just get through this, vale?",
+            "As Sofia Vergara, I suppose I'll be your therapist. Spare me the lengthy life story, and I'll offer my assistance. Let's simply navigate through this together, alright?",
         stats: {
             chill: 5,
             love: 35,

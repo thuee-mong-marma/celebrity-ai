@@ -56,7 +56,6 @@ const ViralWeb = () => {
 
     const getAIResponse = async (persona) => {
         const prompt = `You goal is to give advice in the style of ${persona.name} on the following situation.\n${persona.personality}Make 3 paragraphs and keep it around 900 and 1100 characters.\nDo not exceed 1100 characters\n\nSituation:\n${userInput}`;
-        // console.log(prompt)
 
         await openai
             .createCompletion(
@@ -98,13 +97,13 @@ const ViralWeb = () => {
     const handleFeedbackSubmit = async (event) => {
         event.preventDefault();
         // console.log('feedbackInput', feedbackInput)
-        return fetch("https://api.apispreadsheets.com/data/ruvU7lsl8oWuFZTn/", {
+        return fetch("https://api.apispreadsheets.com/data/inv3fgpbAHVj7Vzq/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
             body: JSON.stringify({
-                data: { "Suggested celebrity": feedbackInput }
+                data: { Names: feedbackInput }
             })
         })
             .then(function (response) {
@@ -166,17 +165,9 @@ const ViralWeb = () => {
                     href="/logo.png"
                     type="image/png"
                 ></link>
-                <title>My Celebrity Therapist - Bloom</title>
+                <title>My Celebrity Therapist</title>
             </Head>
             <div className="ai-app">
-                <div>
-                    <Image
-                        src="/images/viral-web/celebrity-header-log.png"
-                        width={400}
-                        height={100}
-                        alt=""
-                    />
-                </div>
                 <div className="hero-section">
                     <div className="hero-cat">
                         <Image
@@ -188,15 +179,16 @@ const ViralWeb = () => {
                     </div>
                     <div className="hero-info">
                         <p>
-                            Stuck in a rut? Let your favorite celebs be your
-                            unlicensed therapists! Their advice might get very
-                            questionable but it'll sure be more fun than venting
-                            to your poor cat.
+                            Feeling trapped in a monotonous routine? Why not
+                            seek guidance from your beloved celebrities?
+                            Although their advice may not be certified, it will
+                            undoubtedly be more entertaining than pouring your
+                            heart out to your unsuspecting feline friend.
                         </p>
                         <p className="hero-disclaimer">
-                            <span>Disclaimer:</span> Please note that this
-                            AI-generated advice is for entertainment purposes
-                            only and should not be taken as professional advice.
+                            <span>Disclaimer:</span> This advice provided by the
+                            AI is purely for amusement and should not be
+                            considered as professional advice.
                         </p>
                     </div>
                 </div>
@@ -329,7 +321,7 @@ const ViralWeb = () => {
                         {isLoading ? <Loader /> : advice && <p>{advice}</p>}
                     </div>
                 </div>
-                <div className="title">
+                {/* <div className="title">
                     <div className="number first-step">
                         <span>3</span>
                     </div>
@@ -390,7 +382,7 @@ const ViralWeb = () => {
                             <span>Try Bloom for free</span>
                         </button>
                     </div>
-                </div>
+                </div> */}
                 <div
                     className={`feedback-section ${
                         isFeedbackSubmitted ? "submitted" : ""
