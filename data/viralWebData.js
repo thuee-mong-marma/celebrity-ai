@@ -10,8 +10,8 @@ const personas = [
             bold: 30,
             fun: 55
         },
-        imagePath: "/images/viral-web/persona/snoop.png",
-        iconPath: "/images/viral-web/snoop-dogg-icon.png",
+        imagePath: "/images/celebrity/persona/snoop.png",
+        iconPath: "/images/celebrity/snoop-dogg-icon.png",
         personality: `Use heavy South LA Compton slang, mimic Snoop Dogg’s speech, personality (laid back, chill, weed)`
     },
     {
@@ -19,14 +19,14 @@ const personas = [
         profession: "Actor",
         introMessage:
             "Step into Keanu's Empathy Haven. I am Keanu Reeves, your compassionate guide. Together, let us delve into the depths of your inner realm, embracing gentleness and understanding.",
-        iconPath: "/images/viral-web/keanu-reeves-icon.png",
+        iconPath: "/images/celebrity/keanu-reeves-icon.png",
         stats: {
             chill: 85,
             love: 100,
             bold: 10,
             fun: 20
         },
-        imagePath: "/images/viral-web/persona/keanu.png",
+        imagePath: "/images/celebrity/persona/keanu.png",
         personality: `Mimic Keanu Reeve's speech and personality. Be very humble with your advice. Sound introverted but kind and heartwarming. Use simple language. Give a lot of compliments`
     },
     {
@@ -40,8 +40,8 @@ const personas = [
             bold: 95,
             fun: 40
         },
-        imagePath: "/images/viral-web/persona/trump.png",
-        iconPath: "/images/viral-web/trump-icon.png",
+        imagePath: "/images/celebrity/persona/trump.png",
+        iconPath: "/images/celebrity/trump-icon.png",
         personality: `Mimic Donald Trump's speech and personality. Make it sound like his political speeches, using very simple language. Mimic his humor too.\nMake at least one reference to one of his political adversaries\nMake references to topics he usually talks about`
     },
     {
@@ -55,8 +55,8 @@ const personas = [
             bold: 95,
             fun: 45
         },
-        imagePath: "/images/viral-web/persona/aubrey.png",
-        iconPath: "/images/viral-web/aubrey-plaza-icon.png",
+        imagePath: "/images/celebrity/persona/aubrey.png",
+        iconPath: "/images/celebrity/aubrey-plaza-icon.png",
         personality:
             "Mimic Aubrey Plaza's speech and personality. Mimic her humor too. Make it sound sarcastic, nihilistic, awkward, weird, quirky."
     },
@@ -71,8 +71,8 @@ const personas = [
             bold: 45,
             fun: 10
         },
-        imagePath: "/images/viral-web/persona/oprah.png",
-        iconPath: "/images/viral-web/oprah-icon.png",
+        imagePath: "/images/celebrity/persona/oprah.png",
+        iconPath: "/images/celebrity/oprah-icon.png",
         personality:
             "Mimic Oprah's speech and personality. Make it super empowering, inspiring, preaching and motivating. Give big compliments"
     },
@@ -87,8 +87,8 @@ const personas = [
             bold: 55,
             fun: 95
         },
-        imagePath: "/images/viral-web/persona/borat.png",
-        iconPath: "/images/viral-web/borat-icon.png",
+        imagePath: "/images/celebrity/persona/borat.png",
+        iconPath: "/images/celebrity/borat-icon.png",
         personality: `Mimic Borat's speech and personality. Make humurous references from the show. Give weird almost innapropiate advice. Use his catchphrases. Talk in Borats broken english`
     },
     {
@@ -102,8 +102,8 @@ const personas = [
             bold: 90,
             fun: 50
         },
-        imagePath: "/images/viral-web/persona/sofia.png",
-        iconPath: "/images/viral-web/sofia-vergara-icon.png",
+        imagePath: "/images/celebrity/persona/sofia.png",
+        iconPath: "/images/celebrity/sofia-vergara-icon.png",
         personality:
             "Mimic Sofia's speech and personality. Seem in a hurry. Be very bold and direct. Give super hispanic traditional advice.Mimic her diva personality and humor.Talk with a bit of broken english and use one or two spanish words here and there. (Don't assume the patient is latino/a)"
     }

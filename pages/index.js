@@ -1,18 +1,18 @@
+import ButtonLoader from "@/components/ButtonLoader";
 import Loader from "@/components/Loader";
 import personas from "@/data/viralWebData";
-import Image from "next/legacy/image";
 import Head from "next/head";
+import Image from "next/legacy/image";
 import { Configuration, OpenAIApi } from "openai";
 import React, { useEffect, useState } from "react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ButtonLoader from "@/components/ButtonLoader";
-import PixelBomb from "/assets/svg/viral-web/pixel-bomb.svg";
-import PixelHaha from "/assets/svg/viral-web/pixel-haha-emoji.svg";
-import PixelHeart from "/assets/svg/viral-web/pixel-heart.svg";
-import PixelWeed from "/assets/svg/viral-web/pixel-weed.svg";
+import PixelBomb from "/assets/svg/celebrity/pixel-bomb.svg";
+import PixelHaha from "/assets/svg/celebrity/pixel-haha-emoji.svg";
+import PixelHeart from "/assets/svg/celebrity/pixel-heart.svg";
+import PixelWeed from "/assets/svg/celebrity/pixel-weed.svg";
 const configuration = new Configuration({
     apiKey: "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"
 });
@@ -134,10 +134,10 @@ const ViralWeb = () => {
                 window.innerWidth >= 1024
                     ? "desktop"
                     : window.innerWidth >= 768
-                    ? "tablet"
-                    : window.innerWidth >= 480
-                    ? "largeMobile"
-                    : "mobile";
+                        ? "tablet"
+                        : window.innerWidth >= 480
+                            ? "largeMobile"
+                            : "mobile";
             setScreenMode(screenMode);
         };
 
@@ -171,7 +171,7 @@ const ViralWeb = () => {
                 <div className="hero-section">
                     <div className="hero-cat">
                         <Image
-                            src="/images/viral-web/questioned-cat.png"
+                            src="/images/celebrity/questioned-cat.png"
                             width={125}
                             height={120}
                             alt=""
@@ -226,21 +226,20 @@ const ViralWeb = () => {
                                 screenMode === "desktop"
                                     ? 4.5
                                     : screenMode === "tablet"
-                                    ? 3.5
-                                    : screenMode === "largeMobile"
-                                    ? 2
-                                    : 1.25
+                                        ? 3.5
+                                        : screenMode === "largeMobile"
+                                            ? 2
+                                            : 1.25
                             }
                         >
                             {personas.map((persona) => (
                                 <SwiperSlide key={persona.name}>
                                     <div
-                                        className={`persona ${
-                                            selectedPersona.name ===
+                                        className={`persona ${selectedPersona.name ===
                                             persona.name
-                                                ? "selected"
-                                                : ""
-                                        }`}
+                                            ? "selected"
+                                            : ""
+                                            }`}
                                         onClick={() =>
                                             handlePersonaClick(persona)
                                         }
@@ -321,72 +320,9 @@ const ViralWeb = () => {
                         {isLoading ? <Loader /> : advice && <p>{advice}</p>}
                     </div>
                 </div>
-                {/* <div className="title">
-                    <div className="number first-step">
-                        <span>3</span>
-                    </div>
-                    <h1>Get actual mental health advice</h1>
-                </div>
-                <div className="bloom-promo">
-                    <div className="left-col">
-                        <Image
-                            src="/images/viral-web/pixelated-bloom-app-demo.png"
-                            width={473}
-                            height={691}
-                            alt=""
-                        />
-                    </div>
-                    <div className="right-col">
-                        <Image
-                            src="/images/viral-web/pixelated-bloom-logo.png"
-                            width={82}
-                            height={35}
-                            alt=""
-                        />
-                        <h1>Your AI-Therapist in your pocket!</h1>
-                        <p>
-                            Bloom combines interactive video sessions and
-                            curated AI-advice, tracking and personalization to
-                            create the best mental health companion. Designed by
-                            therapist. Loved by users.
-                        </p>
-                        <div className="app-of-the-day">
-                            <Image
-                                src="/images/viral-web/pixelated-app-of-the-day.png"
-                                width={200}
-                                height={48}
-                                alt=""
-                            />
-                            <Image
-                                src="/images/viral-web/pixelated-rating.png"
-                                width={160}
-                                height={48}
-                                alt=""
-                            />
-                        </div>
-                        <button
-                            className="pixelated-btn"
-                            onClick={() =>
-                                window.open(
-                                    "https://get.enjoybloom.com/onboarding",
-                                    "_blank"
-                                )
-                            }
-                        >
-                            <Image
-                                src="/images/viral-web/pixelated-apple-logo.png"
-                                width={30}
-                                height={35}
-                                alt=""
-                            />
-                            <span>Try Bloom for free</span>
-                        </button>
-                    </div>
-                </div> */}
                 <div
-                    className={`feedback-section ${
-                        isFeedbackSubmitted ? "submitted" : ""
-                    }`}
+                    className={`feedback-section ${isFeedbackSubmitted ? "submitted" : ""
+                        }`}
                 >
                     {isFeedbackSubmitted ? (
                         <p>Thanks for your submission!</p>
