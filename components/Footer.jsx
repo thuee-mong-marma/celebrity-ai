@@ -5,7 +5,10 @@ const Footer = () => {
         <div className="footer">
             <ul>
                 <li className="footer-item">
-                    <a href="#" target="_blank">
+                    <a
+                        href="https://github.com/thuee-mong-marma"
+                        target="_blank"
+                    >
                         Github
                     </a>
                 </li>
@@ -15,7 +18,10 @@ const Footer = () => {
                     </a>
                 </li>
                 <li className="footer-item">
-                    <a href="#" target="_blank">
+                    <a
+                        href="https://www.linkedin.com/in/thuee-mong-sing-520127220/"
+                        target="_blank"
+                    >
                         LinkedIn
                     </a>
                 </li>

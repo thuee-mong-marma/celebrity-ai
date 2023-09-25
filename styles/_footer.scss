@@ -10,10 +10,12 @@
         justify-content: center;
 
         .footer-item {
-            font-size: 12px;
             line-height: 28px;
             font-weight: 500;
-            color: #6f8797;
+
+            font-family: "LoRes 15 OT";
+            font-size: 16px;
+            color: #cecef5;
         }
 
         .footer-item:not(:last-child) {

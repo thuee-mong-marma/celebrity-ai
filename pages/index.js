@@ -57,6 +57,9 @@ const ViralWeb = () => {
     const getAIResponse = async (persona) => {
         const prompt = `You goal is to give advice in the style of ${persona.name} on the following situation.\n${persona.personality}Make 3 paragraphs and keep it around 900 and 1100 characters.\nDo not exceed 1100 characters\n\nSituation:\n${userInput}`;
 
+        const apiErrText =
+            "Sorry, mate! It seems like I'm out of gpt-juice.\nPlease come back and try again later. In the meantime, I'll let my master know of this issue.\nThanks for showing intertest in me though.";
+
         await openai
             .createCompletion(
                 {
@@ -82,7 +85,7 @@ const ViralWeb = () => {
             })
             .catch((err) => {
                 console.log(err);
-                window.alert("There was an error, please try again");
+                setAdvice(apiErrText);
                 setLoading(false);
             });
     };
@@ -134,10 +137,10 @@ const ViralWeb = () => {
                 window.innerWidth >= 1024
                     ? "desktop"
                     : window.innerWidth >= 768
-                        ? "tablet"
-                        : window.innerWidth >= 480
-                            ? "largeMobile"
-                            : "mobile";
+                    ? "tablet"
+                    : window.innerWidth >= 480
+                    ? "largeMobile"
+                    : "mobile";
             setScreenMode(screenMode);
         };
 
@@ -226,20 +229,21 @@ const ViralWeb = () => {
                                 screenMode === "desktop"
                                     ? 4.5
                                     : screenMode === "tablet"
-                                        ? 3.5
-                                        : screenMode === "largeMobile"
-                                            ? 2
-                                            : 1.25
+                                    ? 3.5
+                                    : screenMode === "largeMobile"
+                                    ? 2
+                                    : 1.25
                             }
                         >
                             {personas.map((persona) => (
                                 <SwiperSlide key={persona.name}>
                                     <div
-                                        className={`persona ${selectedPersona.name ===
+                                        className={`persona ${
+                                            selectedPersona.name ===
                                             persona.name
-                                            ? "selected"
-                                            : ""
-                                            }`}
+                                                ? "selected"
+                                                : ""
+                                        }`}
                                         onClick={() =>
                                             handlePersonaClick(persona)
                                         }
@@ -321,8 +325,9 @@ const ViralWeb = () => {
                     </div>
                 </div>
                 <div
-                    className={`feedback-section ${isFeedbackSubmitted ? "submitted" : ""
-                        }`}
+                    className={`feedback-section ${
+                        isFeedbackSubmitted ? "submitted" : ""
+                    }`}
                 >
                     {isFeedbackSubmitted ? (
                         <p>Thanks for your submission!</p>
@@ -349,84 +354,6 @@ const ViralWeb = () => {
                         </>
                     )}
                 </div>
-
-                <style jsx>
-                    {`
-                        :global(.layout__) {
-                            background-color: #212127;
-                            height: 100%;
-                        }
-                        :global(.footer ul .footer-item) {
-                            font-family: "LoRes 15 OT";
-                            font-size: 16px;
-                            color: #cecef5;
-                        }
-                        .hero-section {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            margin: 0;
-                            padding: 80px 0 60px 0;
-                            border-bottom: 5px solid #424256;
-                        }
-
-                        @media only screen and (max-width: 768px) {
-                            .hero-section {
-                                flex-direction: column;
-                            }
-
-                            .hero-cat {
-                                align-self: center;
-                                margin-right: 0;
-                                margin-bottom: 20px;
-                            }
-                        }
-
-                        .hero-section p {
-                            max-width: unset;
-                            text-align: start;
-                            font-weight: 410;
-                            letter-spacing: -0.02em;
-                        }
-
-                        .hero-info p:first-child {
-                            color: #e0e0fd;
-                            margin: 0;
-                            font-size: 28px;
-                            line-height: 30px;
-                        }
-
-                        .hero-disclaimer {
-                            color: #adadd9;
-                            margin-top: 20px;
-                            font-size: 22px;
-                            line-height: 24px;
-                        }
-
-                        .hero-disclaimer span {
-                            color: #da6c5d;
-                        }
-
-                        @media only screen and (max-width: 600px) {
-                            .hero-section {
-                                flex-direction: column;
-                                padding: 60px 0;
-                            }
-                        }
-
-                        @media only screen and (max-width: 768px) {
-                            .hero-info p:first-child {
-                                font-size: 22px;
-                                line-height: 28px;
-                            }
-
-                            .hero-disclaimer {
-                                font-size: 20px;
-                                line-height: 22px;
-                            }
-                        }
-                    `}
-                </style>
             </div>
         </>
     );
