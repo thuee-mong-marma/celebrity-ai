@@ -40,7 +40,7 @@ const AIForm = () => {
   return (
     <section className="py-5 md:py-10">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <NumberedHeader number="1">
+        <NumberedHeader number="2">
           Write what&apos;s on your mind
         </NumberedHeader>
         <Textarea placeholder="Type here..." />

@@ -1,8 +1,8 @@
-import NumberedHeader from "@/components/NumberedHeader";
-import Image from "next/image";
-import { Personas } from "@/components/Personas";
-import AdviceContainer from "@/components/AdviceContainer";
-import AIForm from "@/components/Form";
+import AdviceContainer from '@/components/AdviceContainer';
+import AIForm from '@/components/Form';
+import NumberedHeader from '@/components/NumberedHeader';
+import { Personas } from '@/components/Personas';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -30,10 +30,10 @@ export default function Home() {
         </div>
       </section>
       <section className="py-5 md:py-10 space-y-4">
-        <NumberedHeader number="2">Select your therapist</NumberedHeader>
+        <NumberedHeader number="1">Select your therapist</NumberedHeader>
         <Personas />
       </section>
-      <AIForm/>
+      <AIForm />
       <section className="space-y-10">
         <div className="space-y-4">
           <NumberedHeader>Celebrity Advice</NumberedHeader>
