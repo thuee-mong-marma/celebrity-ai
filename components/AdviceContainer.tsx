@@ -6,12 +6,13 @@ import { usePersona } from '@/hooks/usePersona';
 import Image from 'next/image';
 import Loader from './Loader';
 
+
 const AdviceContainer = () => {
   const { currentPersona } = usePersona();
   const { advice, isAdviceGenerating } = useAdvice();
 
   return (
-    <div className="advice-container min-h-[400px] w-full p-10 max-h-fit bg-persona-background bg-full bg-no-repeat space-y-4">
+    <div id="advice" className="min-h-[400px] w-full p-10 max-h-fit bg-persona-background bg-full bg-no-repeat space-y-4">
       <div className="flex items-center justify-center gap-4">
         <Image
           src={personas[currentPersona].iconPath}

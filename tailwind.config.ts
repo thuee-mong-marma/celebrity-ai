@@ -16,6 +16,7 @@ const config: Config = {
         'textarea-background': 'url("/images/images/pixelated-text-area.png")',
         'persona-background': 'url("/images/images/pixelated-border-bg.png")',
         'btn-background': 'url("/images/celebrity/button-background.png")',
+        'up-arrow' : 'url("/images/images/pixelated-up-arrow.png")',
       },
       colors: {
         white: "#e0e0fd",

@@ -14,7 +14,8 @@ const NumberedHeader = ({ number, children }: NumberedHeaderProps) => {
 
 export const Number = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="h-10 w-10 md:h-12 md:w-12 number-background flex items-center justify-center text-white text-xl md:text-2xl">
+    <div className="h-10 w-10 md:h-12 md:w-12 bg-number-background bg-full bg-no-repeat flex items-center justify-center text-white text-xl md:text-3xl">
+
       {children}
     </div>
   );

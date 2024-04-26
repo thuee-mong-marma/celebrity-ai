@@ -1,12 +1,13 @@
-'use client';
+"use client";
 
-import getAdvice from '@/actions/getAdvice';
-import { personas } from '@/data/personaData';
-import { useAdvice } from '@/hooks/useAdvice';
-import { usePersona } from '@/hooks/usePersona';
-import { Button } from './Button';
-import NumberedHeader from './NumberedHeader';
-import Textarea from './Textarea';
+import getAdvice from "@/actions/getAdvice";
+import { personas } from "@/data/personaData";
+import { useAdvice } from "@/hooks/useAdvice";
+import { usePersona } from "@/hooks/usePersona";
+import { Button } from "./Button";
+import NumberedHeader from "./NumberedHeader";
+import Textarea from "./Textarea";
+import ScrollInto from "react-scroll-into-view";
 
 const AIForm = () => {
   const { currentPersona } = usePersona();
@@ -15,11 +16,11 @@ const AIForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (advice) {
-      setAdvice('');
+      setAdvice("");
     }
     const formData = new FormData(e.currentTarget);
 
-    const message = formData.get('message') as string;
+    const message = formData.get("message") as string;
 
     const prompt = `You goal is to give advice in the style of ${personas[currentPersona].name} on the following situation.\n${personas[currentPersona].personality}Make 3 paragraphs and keep it around 900 and 1100 characters.\nDo not exceed 1100 characters\n\nSituation:\n${message}`;
 
@@ -44,12 +45,14 @@ const AIForm = () => {
           Write what&apos;s on your mind
         </NumberedHeader>
         <Textarea placeholder="Type here..." />
-        <Button
-          type="submit"
-          className="block w-[250px] mx-auto bg-violet text-white text-xl h-[unset] p-3"
-        >
-          Generate Advice
-        </Button>
+        <ScrollInto selector="#advice">
+          <Button
+            type="submit"
+            className="block w-[250px] mx-auto bg-violet text-white text-xl h-[unset] p-3"
+          >
+            Generate Advice
+          </Button>
+        </ScrollInto>
       </form>
     </section>
   );

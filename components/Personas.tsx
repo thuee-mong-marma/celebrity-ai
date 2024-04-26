@@ -31,7 +31,7 @@ export const Personas = () => {
                   currentPersona === persona.name ? 'opacity-100 scale-125' : ''
                 )}
                 onClick={() => {
-                  if (advice !== '') {
+                  if (advice) {
                     setAdvice('');
                   }
                   setPersona(persona.name);
