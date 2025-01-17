@@ -1,27 +1,52 @@
-'use client'
+"use client";
 
-import { useChat } from 'ai/react';
+import { usePersona } from "@/hooks/usePersona";
+import { useChat } from "ai/react";
+import { personas } from "@/data/personaData";
+import Textarea from "@/components/Textarea";
+import ChatMessages from "@/components/ChatMessages";
+import { SendHorizontal } from "lucide-react";
 
 export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit  } = useChat();
+  const { currentPersona } = usePersona();
+
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: "/api/chat",
+    body: {
+      persona: currentPersona,
+      personality: personas[currentPersona].personality,
+    },
+  });
 
   return (
-    <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
-      {messages.map(m => (
-        <div key={m.id} className="whitespace-pre-wrap">
-          {m.role === 'user' ? 'User: ' : 'AI: '}
-          {m.content}
-        </div>
-      ))}
-
-      <form onSubmit={handleSubmit}>
-        <input
-          className="fixed bottom-0 w-full max-w-md p-2 mb-8 border border-gray-300 rounded shadow-xl"
-          value={input}
-          placeholder="Say something..."
-          onChange={handleInputChange}
-        />
-      </form>
+    <div className="flex flex-col h-[100dvh]">
+      <header className="flex items-center justify-center p-2 border-b border-gray-300">
+        <h1 className="text-xl font-bold text-purple">
+          Therapy session with {currentPersona.split(" ")[0]}
+        </h1>
+      </header>
+      <ChatMessages messages={messages} />
+      <div className="w-full max-w-4xl p-2">
+        <form onSubmit={handleSubmit} className="relative">
+          <Textarea
+            value={input}
+            placeholder="Write your message here..."
+            onChange={handleInputChange}
+            rows={2}
+          />
+          <button
+            type="submit"
+            className="bg-transparent text-black rounded absolute right-2 top-[50%] -translate-y-[50%]"
+          >
+            <SendHorizontal className="w-6 h-6 text-white" />
+          </button>
+        </form>
+        <p className="text-xs text-purple text-center leading-6 mt-2">
+          <span className="text-danger mr-2">Disclaimer:</span>
+          This advice provided by the AI is purely for amusement and should not
+          be considered as professional advice.
+        </p>
+      </div>
     </div>
   );
 }

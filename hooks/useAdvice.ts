@@ -1,15 +1,17 @@
+import { Message } from 'ai';
 import { create } from 'zustand';
 
 type AdviceStore = {
-  advice: string;
+  advice: Message[];
   isAdviceGenerating: boolean;
-  setAdvice: (advice: string) => void;
+  setAdvice: (messages: Message[]) => void;
   setAdviceGenerating: (isAdviceGenerating: boolean) => void;
 };
 
 export const useAdvice = create<AdviceStore>((set) => ({
-  advice: '',
+  advice: [],
   isAdviceGenerating: false,
   setAdviceGenerating: (isAdviceGenerating) => set({ isAdviceGenerating }),
-  setAdvice: (advice) => set({ advice }),
+  setAdvice: (messages) => set({ advice: messages }),
 }));
+

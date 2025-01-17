@@ -15,6 +15,7 @@ html {
   background-size: calc(100% / 3) 50%;
   animation: l3 1s infinite linear;
 }
+
 @keyframes l3 {
   20% {
     background-position: 0% 0%, 50% 50%, 100% 50%;
@@ -28,4 +29,14 @@ html {
   80% {
     background-position: 0% 50%, 50% 50%, 100% 100%;
   }
+}
+
+.typewriter p:last-child:after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

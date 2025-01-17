@@ -1,18 +1,26 @@
 'use client'
 
-interface TextareaProps {
-  placeholder: string,
-  value?: string,
-  onChange?: ((e: React.ChangeEvent<HTMLTextAreaElement>) => void),
-  placeHolder?: string
+import { useEffect, useRef } from 'react'
+import { cn } from '@/lib/utils'
+
+interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  className?: string
 }
 
-const Textarea = ({placeholder, value, onChange, placeHolder} : TextareaProps) => {
-  return (
-    <div className="w-full rounded-xl resize-none">
-      <textarea name='message' placeholder={placeholder} className="bg-textarea-background bg-no-repeat bg-full w-full rounded-xl p-10 bg-transparent focus-visible:outline-none text-white text-xl md:text-2xl" rows={8} maxLength={300} value={value} onChange={onChange}/>
-    </div>
-  )
+const Textarea = ({...props} : TextareaProps) => {
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.addEventListener('input', (e) => {
+        const target = e.target as HTMLTextAreaElement
+        target.style.height = 'auto'
+        target.style.height = `${target.scrollHeight}px`
+      }, false)
+    }
+  }, [])
+
+  return <textarea {...props} className={cn("w-full max-h-[25dvh] p-2 border border-gray-500 rounded bg-gray-700 text-white focus:outline-none", props.className)} ref={textareaRef}  />
 }
 
 export default Textarea

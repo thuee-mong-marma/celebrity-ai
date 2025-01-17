@@ -1,38 +1,56 @@
-'use client';
+"use client";
 
-import { personas } from '@/data/personaData';
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
+import { personas } from "@/data/personaData";
+import { useAdvice } from "@/hooks/useAdvice";
+import { usePersona } from "@/hooks/usePersona";
+import { cn } from "@/lib/utils";
+import Persona from "@/components/Persona";
+import NumberedHeader from "@/components/NumberedHeader";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/Carousel';
-import { useAdvice } from '@/hooks/useAdvice';
-import { usePersona } from '@/hooks/usePersona';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import Persona from './Persona';
-
-export const Personas = () => {
+const Personas = () => {
   const { currentPersona, setPersona } = usePersona();
   const { advice, setAdvice } = useAdvice();
 
   return (
-    <div className="bg-persona-background bg-full bg-no-repeat px-5 py-10 md:p-10 space-y-8">
-      <Carousel className="w-full border-b-4 border-[#424256] pb-10">
-        <CarouselContent className="px-24 -ml-24">
+    <section className="py-5 md:py-10 space-y-4">
+      <NumberedHeader>Select your therapist</NumberedHeader>
+      <div className="bg-full bg-no-repeat py-4 md:py-8 space-y-8">
+        <Swiper
+          spaceBetween={10}
+          updateOnWindowResize={true}
+          grabCursor={true}
+          centeredSlides={true}
+          centeredSlidesBounds={true}
+          initialSlide={0}
+          onClick={(swiper) => {
+            console.log('index', swiper.clickedIndex)
+            swiper.slideTo(swiper.clickedIndex)
+          }}
+          breakpoints={{
+            320: {
+              slidesPerView: 1.5,
+            },
+            480: {
+              slidesPerView: 2.5,
+            },
+            768: {
+              slidesPerView: 3.5,
+            },
+          }}
+        >
           {Object.values(personas).map((persona, index) => (
-            <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+            <SwiperSlide key={index}>
               <div
                 className={cn(
-                  'p-1 flex items-center justify-center cursor-pointer opacity-40 transition-all',
-                  currentPersona === persona.name ? 'opacity-100 scale-125' : ''
+                  "p-1 flex items-center justify-center cursor-pointer opacity-40 transition-all",
+                  currentPersona === persona.name ? "opacity-100 scale-110" : ""
                 )}
                 onClick={() => {
                   if (advice) {
-                    setAdvice('');
+                    setAdvice([]);
                   }
                   setPersona(persona.name);
                 }}
@@ -44,11 +62,13 @@ export const Personas = () => {
                   height={245}
                 />
               </div>
-            </CarouselItem>
+            </SwiperSlide>
           ))}
-        </CarouselContent>
-      </Carousel>
-      <Persona persona={personas[currentPersona]} />
-    </div>
+        </Swiper>
+        <Persona persona={personas[currentPersona]} />
+      </div>
+    </section>
   );
 };
+
+export default Personas;
