@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const defaultPersona = "Snoop Dogg";
+const defaultPersona = "Keanu Reeves";
 
 type PersonaStore = {
   currentPersona : string;

@@ -1,8 +1,10 @@
 "use client";
 
 import "swiper/css";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import { Button } from "@/components/Button";
 import { personas } from "@/data/personaData";
 import { useAdvice } from "@/hooks/useAdvice";
 import { usePersona } from "@/hooks/usePersona";
@@ -26,8 +28,8 @@ const Personas = () => {
           centeredSlidesBounds={true}
           initialSlide={0}
           onClick={(swiper) => {
-            console.log('index', swiper.clickedIndex)
-            swiper.slideTo(swiper.clickedIndex)
+            console.log("index", swiper.clickedIndex);
+            swiper.slideTo(swiper.clickedIndex);
           }}
           breakpoints={{
             320: {
@@ -65,6 +67,11 @@ const Personas = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <Link href="/chat" className="block">
+          <Button className="block w-[250px] mx-auto bg-violet text-white text-xl h-[unset] p-3">
+            Choose {personas[currentPersona].name}
+          </Button>
+        </Link>
         <Persona persona={personas[currentPersona]} />
       </div>
     </section>

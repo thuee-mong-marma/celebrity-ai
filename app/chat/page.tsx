@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePersona } from "@/hooks/usePersona";
 import { useChat } from "ai/react";
 import { personas } from "@/data/personaData";
@@ -10,7 +11,7 @@ import { SendHorizontal } from "lucide-react";
 export default function Chat() {
   const { currentPersona } = usePersona();
 
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, append  } = useChat({
     api: "/api/chat",
     body: {
       persona: currentPersona,
@@ -18,8 +19,15 @@ export default function Chat() {
     },
   });
 
+  useEffect(() => {
+    if (!messages.length) {
+      console.log('messages', messages)
+      append({ role: "assistant", content: "Introduce yourself to the user.", id: "1" });
+    }
+  }, [messages.length, append, messages]);
+
   return (
-    <div className="flex flex-col h-[100dvh]">
+    <div className="flex flex-col h-screen">
       <header className="flex items-center justify-center p-2 border-b border-gray-300">
         <h1 className="text-xl font-bold text-purple">
           Therapy session with {currentPersona.split(" ")[0]}
@@ -42,9 +50,9 @@ export default function Chat() {
           </button>
         </form>
         <p className="text-xs text-purple text-center leading-6 mt-2">
-          <span className="text-danger mr-2">Disclaimer:</span>
-          This advice provided by the AI is purely for amusement and should not
-          be considered as professional advice.
+          <span className="text-danger">Disclaimer: </span>
+          This advice provided by the AI is purely for amusement and should
+          not be considered as professional advice.
         </p>
       </div>
     </div>

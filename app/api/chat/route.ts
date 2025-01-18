@@ -56,7 +56,7 @@ export async function POST(req: Request) {
   const { messages, persona, personality } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4-turbo'),
+    model: openai('gpt-4o-mini'),
     system: `Your job is to act as a virtual therapist. You will give advice in the style of ${persona} and your personality is ${personality}. Always reply with a friendly and empathetic tone keeping your personality in mind. Always try to avoid conversation which are not related to giving advices. For example, if the user asks you about literature, you should politely decline and redirect the conversation back to giving advice.`,
     messages,
   });

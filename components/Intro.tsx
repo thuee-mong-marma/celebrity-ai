@@ -1,14 +1,11 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Typewriter from "@/components/Typewriter";
 import Personas from "@/components/Personas";
 import { usePersona } from "@/hooks/usePersona";
-import { Button } from "./Button";
-import { personas } from "@/data/personaData";
-import Link from "next/link";
 
 const strings = [
   "Feeling trapped in a monotonous routine?",
@@ -19,6 +16,13 @@ const strings = [
 const Intro = () => {
   const { currentPersona } = usePersona();
   const [isFinished, setIsFinished] = useState(false);
+  const personaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if(isFinished) {
+      personaRef.current?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    }
+  }, [isFinished]);
 
   return (
     <section>
@@ -45,11 +49,9 @@ const Intro = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
+          ref={personaRef}
         >
           <Personas />
-          <Link href="/chat">
-            <Button className="block w-[250px] mx-auto bg-violet text-white text-xl h-[unset] p-3">Choose {personas[currentPersona].name}</Button>
-          </Link>
         </motion.div>
       )}
     </section>
