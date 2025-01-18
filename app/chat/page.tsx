@@ -11,7 +11,7 @@ import { SendHorizontal } from "lucide-react";
 export default function Chat() {
   const { currentPersona } = usePersona();
 
-  const { messages, input, handleInputChange, handleSubmit, append  } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, append: appendMessage } = useChat({
     api: "/api/chat",
     body: {
       persona: currentPersona,
@@ -21,10 +21,9 @@ export default function Chat() {
 
   useEffect(() => {
     if (!messages.length) {
-      console.log('messages', messages)
-      append({ role: "assistant", content: "Introduce yourself to the user.", id: "1" });
+      appendMessage({ role: "assistant", content: "Introduce yourself to the user.", id: "1" });
     }
-  }, [messages.length, append, messages]);
+  }, [messages.length, appendMessage]);
 
   return (
     <div className="flex flex-col h-screen">
