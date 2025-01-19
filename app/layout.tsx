@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${loResFont.className} min-h-screen bg-[#212127]`}>
+      <body className={`${loResFont.className} min-h-screen bg-background`}>
         {children}
         {/* <Footer /> */}
       </body>

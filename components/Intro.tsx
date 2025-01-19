@@ -1,11 +1,16 @@
 "use client";
 
-import { motion } from "motion/react";
-import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/Button";
 import Typewriter from "@/components/Typewriter";
-import Personas from "@/components/Personas";
+import PersonaCarousel from "@/components/persona/Carousel";
 import { usePersona } from "@/hooks/usePersona";
+import PersonaDetails from "@/components/persona/Details";
+import Heading from "@/components/ui/Heading";
+import Footer from "@/components/Footer";
 
 const strings = [
   "Feeling trapped in a monotonous routine?",
@@ -50,8 +55,16 @@ const Intro = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
           ref={personaRef}
+          className="py-8 md:py-20 space-y-8 md:space-y-12"
         >
-          <Personas />
+          <Heading size="lg">Choose your persona</Heading>
+          <PersonaCarousel />
+          <Link href="/chat" className="block">
+            <Button className="block w-[250px] mx-auto bg-violet text-white text-xl h-[unset] p-3">
+              Choose {currentPersona}
+            </Button>
+          </Link>
+          <PersonaDetails persona={currentPersona} />
         </motion.div>
       )}
     </section>

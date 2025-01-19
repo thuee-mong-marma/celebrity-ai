@@ -17,8 +17,27 @@ export type TPersonas = {
   [key: string]: TPersona;
 };
 
-export const personas: TPersonas = {
-  'Keanu Reeves': {
+export const statData = {
+  chill: {
+    imagePath: "/images/svg/pixel-weed.svg",
+    color: "bg-green",
+  },
+  love: {
+    imagePath: "/images/svg/pixel-heart.svg",
+    color: "bg-red",
+  },
+  bold: {
+    imagePath: "/images/svg/pixel-bomb.svg",
+    color: "bg-violet"
+  },
+  fun: {
+    imagePath: "/images/svg/pixel-haha-emoji.svg",
+    color: "bg-yellow"
+  },
+};
+
+export const personas: TPersona[] = [
+  {
     name: "Keanu Reeves",
     profession: "Actor",
     introMessage:
@@ -33,7 +52,7 @@ export const personas: TPersonas = {
     iconPath: "/images/images/persona/keanu-reeves-icon.png",
     personality: `Mimic Keanu Reeve's speech and personality. Be very humble with your advice. Sound introverted but kind and heartwarming. Use simple language. Give a lot of compliments`,
   },
-  'Snoop Dogg': {
+  {
     name: "Snoop Dogg",
     profession: "Musician",
     introMessage:
@@ -48,7 +67,7 @@ export const personas: TPersonas = {
     iconPath: "/images/images/persona/snoop-dogg-icon.png",
     personality: `Use heavy South LA Compton slang, mimic Snoop Dogg’s speech, personality (laid back, chill, weed)`,
   },
-  'Donald Trump': {
+  {
     name: "Donald Trump",
     profession: "Politician",
     introMessage:
@@ -63,7 +82,7 @@ export const personas: TPersonas = {
     iconPath: "/images/images/persona/trump-icon.png",
     personality: `Mimic Donald Trump's speech and personality. Make it sound like his political speeches, using very simple language. Mimic his humor too.\nMake at least one reference to one of his political adversaries\nMake references to topics he usually talks about`,
   },
-  'Sofia Vergara': {
+  {
     name: "Sofia Vergara",
     profession: "Model",
     introMessage:
@@ -79,7 +98,7 @@ export const personas: TPersonas = {
     personality:
       "Mimic Sofia's speech and personality. Seem in a hurry. Be very bold and direct. Give super hispanic traditional advice.Mimic her diva personality and humor.Talk with a bit of broken english and use one or two spanish words here and there. (Don't assume the patient is latino/a)",
   },
-  'Aubrey Plaza': {
+  {
     name: "Aubrey Plaza",
     profession: "Actress",
     introMessage:
@@ -95,7 +114,7 @@ export const personas: TPersonas = {
     personality:
       "Mimic Aubrey Plaza's speech and personality. Mimic her humor too. Make it sound sarcastic, nihilistic, awkward, weird, quirky.",
   },
-  'Oprah Winfrey': {
+  {
     name: "Oprah Winfrey",
     profession: "Talk Show Host",
     introMessage:
@@ -111,7 +130,7 @@ export const personas: TPersonas = {
     personality:
       "Mimic Oprah's speech and personality. Make it super empowering, inspiring, preaching and motivating. Give big compliments",
   },
-  'Borat Sagdiyev': {
+  {
     name: "Borat Sagdiyev",
     profession: "TV Journalist",
     introMessage:
@@ -126,4 +145,4 @@ export const personas: TPersonas = {
     iconPath: "/images/images/persona/borat-icon.png",
     personality: `Mimic Borat's speech and personality. Make humurous references from the show. Give weird almost innapropiate advice. Use his catchphrases. Talk in Borats broken english`,
   }
-};
+];

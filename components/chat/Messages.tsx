@@ -4,15 +4,15 @@ import { useEffect, useState, useRef } from "react";
 import { Message } from "ai";
 import { ArrowDown } from "lucide-react";
 import { isElementVisible } from "@/lib/utils";
+import { useAIChat } from "@/components/providers/AIChatProvider";
 
-interface Props {
-  messages: Message[];
-}
 
-const ChatMessages = ({ messages }: Props) => {
+const ChatMessages = () => {
+  const { messages } = useAIChat();
+
   return (
     <div
-      className="relative flex-1 overflow-y-auto p-4 text-white flex flex-col gap-4"
+      className="relative flex-1 overflow-y-auto px-4 pt-14 text-white flex flex-col gap-4"
       // ref={containerRef}
     >
       {messages.map((m) => (

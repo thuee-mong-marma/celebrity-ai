@@ -13,7 +13,7 @@ const footerData = [
 
 const Footer = () => {
   return (
-    <footer className="py-6 space-y-4 text-purple">
+    <footer className="space-y-4 text-purple">
       <div className="text-xl text-center">Made with &#10084; by Mong</div>
       <ul className="flex items-center justify-center gap-8">
         {footerData.map((item, index) => (

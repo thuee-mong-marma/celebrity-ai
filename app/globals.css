@@ -44,3 +44,10 @@ html {
 [data-message-id='1'] {
   display: none !important;
 }
+
+.ai-button {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(calc(-50% - 3px));
+}

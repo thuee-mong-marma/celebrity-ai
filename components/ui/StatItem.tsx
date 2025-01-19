@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { statData } from "@/data/personaData";
 
 export type StatItemType = keyof typeof statData;
 
@@ -7,25 +8,6 @@ interface StatItemProps {
   statName: StatItemType;
   statValue: number;
 }
-
-const statData = {
-  chill: {
-    imagePath: "/images/svg/pixel-weed.svg",
-    color: "bg-green",
-  },
-  love: {
-    imagePath: "/images/svg/pixel-heart.svg",
-    color: "bg-red",
-  },
-  bold: {
-    imagePath: "/images/svg/pixel-bomb.svg",
-    color: "bg-violet"
-  },
-  fun: {
-    imagePath: "/images/svg/pixel-haha-emoji.svg",
-    color: "bg-yellow"
-  },
-};
 
 const StatItem = ({statName, statValue}: StatItemProps) => {
   return (

@@ -26,6 +26,7 @@ const config: Config = {
         red: "#E15656",
         violet: "#6A53AC",
         yellow: "#FEAD61",
+        background: "#212127",
       },
       backgroundSize: {
         full: '100% 100%'
