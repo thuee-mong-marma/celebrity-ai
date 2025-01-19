@@ -10,7 +10,6 @@ import PersonaCarousel from "@/components/persona/Carousel";
 import { usePersona } from "@/hooks/usePersona";
 import PersonaDetails from "@/components/persona/Details";
 import Heading from "@/components/ui/Heading";
-import Footer from "@/components/Footer";
 
 const strings = [
   "Feeling trapped in a monotonous routine?",
@@ -60,7 +59,7 @@ const Intro = () => {
           <Heading size="lg">Choose your persona</Heading>
           <PersonaCarousel />
           <Link href="/chat" className="block">
-            <Button className="block w-[250px] mx-auto bg-violet text-white text-xl h-[unset] p-3">
+            <Button className="block w-[250px] mx-auto bg-violet-500 text-white text-xl h-[unset] p-3">
               Choose {currentPersona}
             </Button>
           </Link>

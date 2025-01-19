@@ -20,11 +20,14 @@ const PersonaCarousel = () => {
         centeredSlidesBounds={true}
         initialSlide={0}
         onClick={(swiper) => {
-          //console.log("index", swiper.clickedIndex);
           swiper.slideTo(swiper.clickedIndex);
         }}
         onSlideChange={(swiper) => {
+          //console.log(swiper.activeIndex)
           setPersona(personas[swiper.activeIndex].name);
+        }}
+        onSwiper={(swiper) => {
+          console.log(swiper.activeIndex)
         }}
         breakpoints={{
           320: {

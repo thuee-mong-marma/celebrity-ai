@@ -18,7 +18,7 @@ const PersonaDetails = ({ persona }: { persona: string }) => {
       <div className="flex-1 space-y-2 text-white">
         <Heading className="border-none">{name}</Heading>
         <p className="text-2xl md:text-3xl text-danger">{profession}</p>
-        <p className="text-xl md:text-2xl text-purple">{introMessage}</p>
+        <p className="text-xl md:text-2xl text-violet-200">{introMessage}</p>
       </div>
       <div className="flex-1 space-y-4">
         <p className="text-3xl md:text-4xl text-white">Stats:</p>

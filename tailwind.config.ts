@@ -19,13 +19,8 @@ const config: Config = {
         'up-arrow' : 'url("/images/images/pixelated-up-arrow.png")',
       },
       colors: {
-        white: "#e0e0fd",
+        white: "#e2e8f0",
         danger: "#da6c5d",
-        purple: "#adadd9",
-        green:"#40B65A",
-        red: "#E15656",
-        violet: "#6A53AC",
-        yellow: "#FEAD61",
         background: "#212127",
       },
       backgroundSize: {
@@ -36,3 +31,10 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+
+
+// purple: "#adadd9",
+//         green:"#40B65A",
+//         red: "#E15656",
+//         violet: "#6A53AC",
+//         yellow: "#FEAD61",

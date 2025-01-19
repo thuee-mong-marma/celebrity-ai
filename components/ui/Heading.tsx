@@ -1,7 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const headingVariants = cva("text-3xl md:text-4xl border-b border-white pb-2 text-white", {
+const headingVariants = cva("text-3xl md:text-4xl border-b border-white mb-2 text-white", {
   variants: {
     size: {
       sm: "text-2xl md:text-3xl",

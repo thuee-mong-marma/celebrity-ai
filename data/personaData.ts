@@ -20,19 +20,19 @@ export type TPersonas = {
 export const statData = {
   chill: {
     imagePath: "/images/svg/pixel-weed.svg",
-    color: "bg-green",
+    color: "bg-green-600",
   },
   love: {
     imagePath: "/images/svg/pixel-heart.svg",
-    color: "bg-red",
+    color: "bg-red-600",
   },
   bold: {
     imagePath: "/images/svg/pixel-bomb.svg",
-    color: "bg-violet"
+    color: "bg-violet-500"
   },
   fun: {
     imagePath: "/images/svg/pixel-haha-emoji.svg",
-    color: "bg-yellow"
+    color: "bg-yellow-300"
   },
 };
 
