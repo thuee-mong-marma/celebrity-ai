@@ -3,6 +3,8 @@
 import { createContext, useContext, useState } from "react";
 import { useChat } from "ai/react";
 import { Message } from "ai/react";
+import { usePersona } from "@/hooks/usePersona";
+import { personas } from "@/data/personaData";
 
 type AIChatContextType = {
   messages: Message[];
@@ -16,10 +18,18 @@ type AIChatContextType = {
 const AIChatContext = createContext<AIChatContextType | undefined>(undefined);
 
 export const AIChatProvider = ({ children }: { children: React.ReactNode }) => {
+  const { currentPersona } = usePersona();
+
+  const currentPersonaData = personas.find(persona => persona.name === currentPersona);
+
   const { messages, input, handleInputChange, handleSubmit, isLoading, append: appendMessage } = useChat({
     api: "/api/chat",
+    body : {
+      persona : currentPersonaData?.name,
+      personality : currentPersonaData?.personality
+    },
     onFinish: (message) => {
-      console.log('message generated', message);
+      //console.log('message generated', message);
     }
   });
 

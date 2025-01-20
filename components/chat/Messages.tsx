@@ -22,7 +22,7 @@ const ChatMessages = () => {
               {m.content}
             </p>
           ) : (
-            <p key={m.id} data-message-id={m.id} className="whitespace-pre-wrap max-w-[80%] bg-purple text-black rounded-lg p-2" data-role={m.role}>
+            <p key={m.id} data-message-id={m.id} className="whitespace-pre-wrap max-w-[80%] bg-purple-200 text-black rounded-lg p-2" data-role={m.role}>
               {m.content}
             </p>
           )}
